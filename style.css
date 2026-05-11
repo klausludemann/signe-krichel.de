@@ -112,6 +112,97 @@ a:hover {
   border-bottom-color: #1a1a1a;
 }
 
+/* "Mehr" dropdown — opens on hover (desktop) or click (mobile) */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  background: none;
+  border: none;
+  padding: 0 0 0.2rem 0;
+  margin: 0;
+  font: inherit;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #2d2d2d;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.dropdown-trigger:focus {
+  outline: none;
+}
+
+.dropdown-trigger:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.has-dropdown:hover .dropdown-trigger,
+.has-dropdown.open .dropdown-trigger {
+  color: #000000;
+  border-bottom-color: #1a1a1a;
+}
+
+.dropdown-trigger .caret {
+  font-size: 0.7em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.has-dropdown:hover .dropdown-trigger .caret,
+.has-dropdown.open .dropdown-trigger .caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem 0;
+  min-width: 180px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu,
+.has-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.55rem 1.25rem;
+  color: #2d2d2d;
+  font-size: 0.95rem;
+  font-weight: 300;
+  white-space: nowrap;
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  background: #f5f5f5;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: none;
+}
+
 /* Hero image — full-width, prominent
    ========================================================================== */
 .hero {
@@ -386,6 +477,27 @@ ul.styled-list li::before {
     justify-content: center;
     gap: 1.25rem;
     font-size: 0.9rem;
+  }
+
+  /* Dropdown opens inline (not absolute) on small screens */
+  .dropdown-menu {
+    position: static;
+    margin-top: 0.5rem;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    text-align: center;
+  }
+
+  .dropdown-menu a {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  .dropdown-menu a:hover {
+    background: transparent;
+    border-bottom-color: #1a1a1a;
   }
 }
 
