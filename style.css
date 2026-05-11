@@ -1,7 +1,11 @@
 /* ==========================================================================
    Signe Krichel – Psychologische Praxis
-   Static Website Stylesheet
+   Static website stylesheet
+   Visual style aligned with original Wix design: Lato sans-serif,
+   light weights, generous spacing, centered minimal layout.
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 
 /* Reset & base
    ========================================================================== */
@@ -20,8 +24,9 @@ html {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.7;
   color: #2d2d2d;
   background-color: #ffffff;
@@ -36,20 +41,20 @@ img {
 }
 
 a {
-  color: #5a5a5a;
+  color: #2d2d2d;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 a:hover {
-  color: #1a1a1a;
+  color: #000000;
   text-decoration: underline;
 }
 
 /* Layout container
    ========================================================================== */
 .container {
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -57,43 +62,48 @@ a:hover {
 /* Header & navigation
    ========================================================================== */
 .site-header {
-  border-bottom: 1px solid #e8e8e8;
-  padding: 1.5rem 0;
+  padding: 2rem 0 1rem 0;
 }
 
 .site-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  font-weight: normal;
-  letter-spacing: 0.18em;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 100;
+  letter-spacing: 0.32em;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
 }
 
 .site-title a {
   color: #1a1a1a;
 }
 
+.site-title a:hover {
+  text-decoration: none;
+}
+
 .main-nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   font-size: 0.95rem;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding-bottom: 0.75rem;
 }
 
 .main-nav a {
-  color: #4a4a4a;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  color: #2d2d2d;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #1a1a1a;
+  color: #000000;
   border-bottom-color: #1a1a1a;
   text-decoration: none;
 }
@@ -101,7 +111,8 @@ a:hover {
 /* Hero image
    ========================================================================== */
 .hero {
-  margin: 2rem 0;
+  display: block;
+  margin: 2rem 0 1rem 0;
 }
 
 .hero img {
@@ -116,46 +127,90 @@ main {
 }
 
 .page-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
-  font-weight: normal;
-  letter-spacing: 0.05em;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
   text-align: center;
-  margin: 1.5rem 0 1rem 0;
+  margin: 1.5rem 0 1.25rem 0;
   color: #1a1a1a;
 }
 
 .subtitle {
   text-align: center;
   font-style: italic;
+  font-weight: 300;
   color: #5a5a5a;
   margin-bottom: 2rem;
 }
 
-/* Section headings */
+/* Homepage tagline (large, descriptive, not an uppercase section head) */
+.home-tagline {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 0.02em;
+}
+
+.home-tagline a {
+  color: #1a1a1a;
+}
+
+.home-tagline a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+.home-info {
+  text-align: center;
+  font-style: italic;
+  color: #5a5a5a;
+  margin-top: 1rem;
+}
+
+.home-credit {
+  text-align: center;
+  margin-top: 3rem;
+  color: #2d2d2d;
+}
+
+@media (max-width: 640px) {
+  .home-tagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* Section headings — uppercase with letter-spacing, Wix style */
 h2 {
+  font-family: 'Lato', sans-serif;
   font-size: 0.95rem;
-  font-weight: bold;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #1a1a1a;
-  margin: 2.5rem 0 1rem 0;
+  margin: 2.75rem 0 1.25rem 0;
 }
 
 h3 {
-  font-size: 0.95rem;
-  font-weight: bold;
-  letter-spacing: 0.1em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: #1a1a1a;
-  margin: 1.5rem 0 0.75rem 0;
+  margin: 1.75rem 0 0.75rem 0;
 }
 
 p {
   margin-bottom: 1.2rem;
   text-align: left;
+  font-weight: 400;
 }
 
-/* Quick-link bar (shown under hero on most pages) */
+/* Quick-link bar (shown under hero/title on most pages) */
 .quick-links {
   text-align: center;
   margin: 1.5rem 0 2rem 0;
@@ -164,7 +219,12 @@ p {
 }
 
 .quick-links a {
+  color: #5a5a5a;
   margin: 0 0.4rem;
+}
+
+.quick-links a:hover {
+  color: #1a1a1a;
 }
 
 /* Two-column layout for portrait page
@@ -188,7 +248,7 @@ p {
   }
 }
 
-/* Lists (qualifications, anlässe etc.)
+/* Lists (Anlässe, Qualifikationen, Berufspraxis etc.)
    ========================================================================== */
 ul.styled-list {
   list-style: none;
@@ -197,8 +257,9 @@ ul.styled-list {
 }
 
 ul.styled-list li {
-  padding: 0.4rem 0 0.4rem 1.2rem;
+  padding: 0.45rem 0 0.45rem 1.4rem;
   position: relative;
+  font-weight: 400;
 }
 
 ul.styled-list li::before {
@@ -211,8 +272,7 @@ ul.styled-list li::before {
 /* Footer
    ========================================================================== */
 .site-footer {
-  border-top: 1px solid #e8e8e8;
-  padding: 2.5rem 0 1.5rem 0;
+  padding: 3rem 0 2rem 0;
   margin-top: 3rem;
   text-align: center;
 }
@@ -221,8 +281,8 @@ ul.styled-list li::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 2.5rem;
+  margin-bottom: 1.75rem;
   flex-wrap: wrap;
 }
 
@@ -232,9 +292,10 @@ ul.styled-list li::before {
 }
 
 .footer-text {
-  color: #5a5a5a;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  color: #2d2d2d;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  font-weight: 300;
 }
 
 .footer-nav {
@@ -243,21 +304,30 @@ ul.styled-list li::before {
 }
 
 .footer-nav a {
+  color: #5a5a5a;
   margin: 0 0.4rem;
+}
+
+.footer-nav a:hover {
+  color: #1a1a1a;
 }
 
 /* SEO domain list (kontakt page) */
 .domain-list {
-  margin-top: 2rem;
-  font-size: 0.85rem;
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
   color: #888;
   text-align: center;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .domain-list a {
   color: #888;
   margin: 0 0.3rem;
+}
+
+.domain-list a:hover {
+  color: #1a1a1a;
 }
 
 /* Datenschutz page – tighter typography for legal text */
@@ -268,25 +338,31 @@ ul.styled-list li::before {
 }
 
 .legal-text h2 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   font-size: 1rem;
+  letter-spacing: 0.14em;
+}
+
+.legal-text h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
 }
 
 /* Responsive tweaks
    ========================================================================== */
 @media (max-width: 640px) {
   .site-title {
-    font-size: 1.3rem;
-    letter-spacing: 0.12em;
+    font-size: 1.5rem;
+    letter-spacing: 0.22em;
   }
 
   .main-nav {
-    gap: 1rem;
+    gap: 1.25rem;
     font-size: 0.85rem;
   }
 
   .page-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   body {
